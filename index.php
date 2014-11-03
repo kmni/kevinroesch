@@ -26,25 +26,42 @@
 			<div class="headerBottom">
 				<div class="inner">
 					<h1 class="pageLogo">
-						Kevin Roesch International
+						Kevin Roesch<br />International
 						<span>Worldwide Horse Transport</span>
 					</h1>
 					<span class="formOpener">Contact Us</span>
+					<span class="menuOpener"></span>
 				</div>
 			</div>
 			<div class="headerTop">
 				<div class="inner">
 					<nav class="pageMenu">
 						<ul>
-							<li><a href="#home">Home</a></li>
-							<li><a href="#about">About Us</a></li>
-							<li><a href="#services">Services</a></li>
-							<li><a href="#faqs">FAQs</a></li>
+							<li><a href="#home"><span>Home</span></a></li>
+							<li><a href="#about"><span>About Us</span></a></li>
+							<li><a href="#services"><span>Services</span></a></li>
+							<li><a href="#faqs"><span>FAQs</span></a></li>
 						</ul>
 					</nav>
 					<div class="social">
-						<a href="#" class="facebook"></a>
-						<a href="#" class="twitter"></a>
+						<a href="#" class="facebook"><span></span></a>
+						<a href="#" class="twitter"><span></span></a>
+					</div>
+				</div>
+			</div>
+			<div class="contactForm">
+				<div class="inner">
+					<form action="#" method="post">
+						<fieldset>
+							<input type="text" placeholder="NAME*" />
+							<input type="email" placeholder="EMAIL*" />
+							<input type="submit" value="" />
+						</fieldset>
+					</form>
+					<div class="phone">
+						<p>Need more information? Want to speak to a person?<br />
+							Then give us a call or send us your contact info.</p>
+						<span>1-800-XXX-XXXX</span>
 					</div>
 				</div>
 			</div>
@@ -56,10 +73,10 @@
 					<div class="jcarousel-wrapper carousel">
 						<div class="jcarousel">
 							<ul>
-								<li>1</li>
-								<li>2</li>
-								<li>3</li>
-								<li>4</li>
+								<li><img src="http://placehold.it/610x390" alt="" /></li>
+								<li><img src="http://placehold.it/610x390" alt="" /></li>
+								<li><img src="http://placehold.it/610x390" alt="" /></li>
+								<li><img src="http://placehold.it/610x390" alt="" /></li>
 							</ul>
 						</div>
 						<div class="jcarousel-pagination"></div>

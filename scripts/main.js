@@ -72,6 +72,55 @@ if (window.XMLHttpRequest) {
 	});
 }());
 
+//
+// menu - inpage links
+//
+(function() {
+	$("a[href^='#']").click(function(e) {
+		e.preventDefault();
+		
+		var $this = $(this),
+			target = $($this.attr("href")).offset().top - 198;
+		
+		$("html, body").animate({
+			scrollTop: target
+		}, 800);
+	});
+}());
+
+//
+// menu - highlight
+//
+var boundaries = [ ];
+(function() {
+	if (mobile) {
+		return;
+	}
+	
+	var scroll = 0,
+		$links = $(".pageMenu a"),
+		i;
+	
+	$links.each(function() {
+		boundaries.push($($(this).attr("href")).offset().top - 199);
+	});
+		
+	$window.scroll(function() {
+		scroll = $doc.scrollTop();
+
+		$links.removeClass("active");
+
+		for (i = 0; i < boundaries.length; i++) {
+			if (scroll < boundaries[i]) {
+				break;
+			}
+		}
+
+		if (i - 1 >= 0) {
+			$links.eq(i - 1).addClass("active");
+		}
+	});
+}());
 
 
 //

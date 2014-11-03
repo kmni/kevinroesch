@@ -36,8 +36,8 @@ if (window.XMLHttpRequest) {
 		.on('jcarousel:create jcarousel:reload', function() {
 			var element = $(this),
 				width = element.innerWidth();
-
-			element.jcarousel('items').css('width', width - 10 + 'px');
+			
+			element.jcarousel('items').css('width', width - (element.css("border-top-width") == "1px" ? 10 : 0) + 'px');
 		})
 		.jcarousel();
 
@@ -71,6 +71,17 @@ if (window.XMLHttpRequest) {
 // parallax
 //
 (function() {
+	//apparently IE11 & fixed background are not friends
+	//ipad has also troubles
+	if ('-ms-scroll-limit' in document.documentElement.style && '-ms-ime-align' in document.documentElement.style
+			|| navigator.userAgent.match(/(iPod|iPhone|iPad)/) && navigator.userAgent.match(/AppleWebKit/)) {
+		$(".parallax").css({
+			backgroundAttachment: "scroll",
+			backgroundSize: "cover"
+		});
+		return;
+	}
+	
 	var windowHeight = $window.height();
 	
 	$window.resize(function() {

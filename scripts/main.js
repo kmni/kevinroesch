@@ -103,10 +103,16 @@ if (window.XMLHttpRequest) {
 //
 (function() {
 	$("a[href^='#']").click(function(e) {
+		var $this = $(this),
+			target;
+		
+		if ($this.attr("href") === '#') {
+			return;
+		}
+		
 		e.preventDefault();
 		
-		var $this = $(this),
-			target = $($this.attr("href")).offset().top - 198;
+		target = $($this.attr("href")).offset().top - 198;
 		
 		$("html, body").animate({
 			scrollTop: target
@@ -153,7 +159,8 @@ var boundaries = [ ];
 //
 (function() {
 	var $opener = $(".formOpener"),
-		$form = $(".contactForm");
+		$form = $(".contactForm"),
+		$otherOpeners = $(".contactUs");
 	
 	$form.hide();
 	
@@ -166,6 +173,12 @@ var boundaries = [ ];
 			$opener.addClass("opened");
 			$form.delay(200).slideDown(400);
 		}
+	});
+	
+	$otherOpeners.click(function(e) {
+		e.preventDefault();
+		
+		$opener.click();
 	});
 }());
 

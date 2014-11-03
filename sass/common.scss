@@ -1,0 +1,71 @@
+//
+// Common basic definitons
+//
+
+*,
+*:before,
+*:after{
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+html{
+	background-color: #fff;
+}
+
+body{
+	font-size: 10px;
+	line-height: 1.25;
+}
+
+b, strong{
+	font-weight: bold;
+}
+
+i, em{
+	font-style: italic;
+}
+
+a{
+	color: inherit;
+}
+
+.jcarousel-wrapper{
+	position: relative;
+}
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.jcarousel > ul{
+    width: 20000em;
+    position: relative;
+}
+
+.jcarousel > ul > li{
+    float: left;
+}
+
+.jcarousel-pagination{
+	text-align: center;
+	margin-top: 8px;
+	
+	span{
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+		border: 1px solid #e2d496;
+		border-radius: 50%;
+		@include bg(#fff);
+		margin: 0 3px 0 4px;
+		cursor: pointer;
+		
+		&.active{
+			@include bg(#93865c);
+			cursor: default;
+		}
+	}
+}

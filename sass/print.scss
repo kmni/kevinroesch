@@ -1,0 +1,20 @@
+//
+// Print
+// (not included in style.less)
+//
+
+*, *:before, *:after {
+	background: transparent none !important;
+}
+
+html, body{
+	font-family: Arial, Helvetica, Tahoma, sans-serif;
+	background-color: #fff !important;
+}
+
+form,
+aside,
+footer,
+nav{
+	display: none;
+}

@@ -203,11 +203,27 @@ var boundaries = [ ];
 //
 (function() {
 	var $opener = $(".menuOpener"),
-		$menu = $(".headerTop");
+		$menu = $(".headerTop"),
+		mobile = false,
+		wasMobile = false;
 	
-	if ($(window).width() <= 600) {
-		$menu.hide();
-	}
+	$window.resize(function() {
+		if ($(window).width() <= 600) {
+			mobile = true;
+		} else {
+			mobile = false;
+		}
+		
+		if (mobile !== wasMobile) {
+			if (mobile) {
+				$menu.hide();
+			} else {
+				$menu.show();
+			}
+			
+			wasMobile = mobile;
+		}
+	});
 	
 	$opener.click(function() {
 		if ($menu.is(":visible")) {

@@ -1,3 +1,5 @@
+var boundaries = [ ];
+
 $(document).ready(function() {
 
 var $doc = $(document),
@@ -139,7 +141,6 @@ if (window.XMLHttpRequest) {
 //
 // menu - highlight
 //
-var boundaries = [ ];
 (function() {
 	if (mobile) {
 		return;

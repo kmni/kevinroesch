@@ -18,8 +18,15 @@
 
 		<script src="./scripts/jquery.js"></script>
 		<script src="./scripts/jquery.jcarousel.js"></script>
-		<script src="./scripts/main.js"></script>
 		
+		<script src="./scripts/jquery.autolink.js"></script>
+		<script src="./scripts/jquery.timeago.js"></script>
+		<script src="./scripts/jquery.tmpl.js"></script>
+		<script src="./scripts/twitter-fetcher.js"></script>
+		<script src="./scripts/social.js"></script>
+		
+		<script src="./scripts/main.js"></script>
+
 	</head>
 	<body>
 		
@@ -91,24 +98,24 @@
 								<span>@kroecheint</span>
 							</p>
 							<img src="http://placehold.it/74x74" alt="" class="avatar" />
-							<div class="feed">
-								<div class="item itemTwitter">
-									<p>Ehenist porepro mollabo rehende mquaectem fugit, quis nemolor erumque expliqui coreper umquas elecus…</p>
-									<time datetime="2014-12-12">9 min ago</time>
-								</div>
-								<div class="item itemTwitter">
-									<p>Ne sita dolupta conet rest labor.<a href="#">http://quodisitia_eium/go</a></p>
-									<time datetime="2014-12-12">1 hour ago</time>
-								</div>
-								<div class="item itemFacebook">
-									<p>Saudi Export horses can not leave from Texas for another 4 months due to VS positives, must fly out of Los Angeles, Chicago or New York.</p>
-									<time datetime="2014-12-12">yesterday</time>
-								</div>
-								<div class="item itemTwitter">
-									<p>Umquatur, quam dolent fugiate et laborem excepudandel eratur<a href="#">http://uriorio-imus_ero/go</a></p>
-									<time datetime="2014-10-13">October 13, 2014</time>
-								</div>
+							<div class="feed" id="combined">
+								<div class="">Loading…</div>
 							</div>
+							<script id="facebook_template" type="text/x-jquery-tmpl">
+								<div class="item itemFacebook">
+									<p>{{html message}}</p>
+									<time datetime="${created_time}">${created_time}</time>
+								</div>
+							</script>
+							<script id="twitter_template" type="text/x-jquery-tmpl">
+								<div class="item itemTwitter">
+									<p>{{html tweet}}</p>
+									<time datetime="${created_time}">${created_at}</time>
+								</div>
+							</script>
+							<script>
+								Social.combined("296581627068152", "675770175854762|DvI9xRmZr5Hegmqy7SPO3OnwVtw", "532093115025211392");
+							</script>
 						</div>
 					</div>
 				</div>

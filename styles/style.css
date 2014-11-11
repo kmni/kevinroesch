@@ -345,7 +345,9 @@ body {
     position: absolute;
     top: 31px;
     right: 8px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    max-height: 74px;
+    max-width: 74px; }
   .news .feed {
     margin-top: 15px; }
   .news .item {

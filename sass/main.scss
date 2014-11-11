@@ -295,6 +295,8 @@ body{
 	.avatar{
 		@include absR(8px, 31px);
 		border-radius: 50%;
+		max-height: 74px;
+		max-width: 74px;
 	}
 	
 	.feed{

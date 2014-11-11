@@ -41,7 +41,7 @@ if (window.XMLHttpRequest) {
 			
 			element.jcarousel('items').css('width', width - (element.css("border-top-width") == "1px" ? 10 : 0) + 'px');
 		})
-		.jcarousel()
+		.jcarousel({ wrap: 'both' })
         .jcarouselAutoscroll({
             interval: 5000,
             target: '+=1',

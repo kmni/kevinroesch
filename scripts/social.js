@@ -151,12 +151,13 @@ Social = {
       var post, _i, _len, _ref;
       if (facebookLoaded && twitterLoaded) {
         stream.sort(function(a, b) {
-          return (a.created_at || a.created_time).slice(0, 19).localeCompare((b.created_at || b.created_time).slice(0, 19));
+          console.log((a.created_at || a.created_time).slice(0, 19))
+          return (b.created_at || b.created_time).slice(0, 19).localeCompare((a.created_at || a.created_time).slice(0, 19));
         });
         $("#combined").empty();
         for (var i = 0; i < stream.length && i < 4; i++) {
           post = stream[i];
-          $("#combined").prepend($.tmpl($(post.created_time ? "#facebook_template" : "#twitter_template"), post));
+          $("#combined").append($.tmpl($(post.created_time ? "#facebook_template" : "#twitter_template"), post));
         }
         $("#combined time").timeago();
         $("#combined .itemFacebook").autolink();

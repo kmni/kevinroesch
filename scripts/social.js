@@ -54,7 +54,7 @@ Social = {
         return n;
       }
     };
-    return date.getUTCFullYear() + "-" + pad(date.getUTCMonth() + 1) + "-" + pad(date.getUTCDate()) + "T" + pad(date.getUTCHours()) + ":" + pad(date.getUTCMinutes()) + ":" + pad(date.getUTCSeconds()) + "Z";
+    return date.getFullYear() + "-" + pad(date.getMonth() + 1) + "-" + pad(date.getDate()) + "T" + pad(date.getHours()) + ":" + pad(date.getMinutes()) + ":" + pad(date.getSeconds()) + "Z";
   },
 
   vimeoPlayerLoad: function(videoId, autoPlay) {
@@ -151,22 +151,15 @@ Social = {
       var post, _i, _len, _ref;
       if (facebookLoaded && twitterLoaded) {
         stream.sort(function(a, b) {
-          console.log((a.created_at || a.created_time).slice(0, 19))
           return (b.created_at || b.created_time).slice(0, 19).localeCompare((a.created_at || a.created_time).slice(0, 19));
         });
         $("#combined").empty();
-        for (var i = 0; i < stream.length && i < 4; i++) {
+        for (var i = 0; i < stream.length; i++) {
           post = stream[i];
           $("#combined").append($.tmpl($(post.created_time ? "#facebook_template" : "#twitter_template"), post));
         }
         $("#combined time").timeago();
-        $("#combined .itemFacebook").autolink();
-		
-		//Kevin Roesch specific
-		boundaries = [ ];
-		$(".pageMenu a").each(function() {
-			boundaries.push($($(this).attr("href")).offset().top - 199);
-		});
+        $("#combined .facebook-post").autolink();
       }
     };
     var url = "https://graph.facebook.com/" + facebookId + "/posts/?callback=?";
